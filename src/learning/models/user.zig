@@ -8,7 +8,8 @@ pub const User = struct {
     pub const SUPER_POWER: u64 = 9000;
 
     pub fn init(power: u64, name: []const u8) User {
-        return User{ .name = name, .power = power };
+        // instead of return User{...}
+        return .{ .name = name, .power = power };
     }
 
     pub fn diagnose(user: User) void {
