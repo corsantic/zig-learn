@@ -5,11 +5,12 @@ const MAX_POWER = user_import.MAX_POWER;
 // This code won't compile if `main` isn't `pub` (public)
 pub fn main() void {
     const chuck: User = .{
+        .id = 1,
         .power = 100_00,
         .name = "Chuck Norris",
     };
     chuck.diagnose();
-    const user = User.init(100_00, "Goku");
+    const user = User.init(2, 100_00, "Goku");
     user.diagnose();
     if (user.power > MAX_POWER) {
         std.debug.print("Power exceeds maximum limit of {d}\n", .{MAX_POWER});
