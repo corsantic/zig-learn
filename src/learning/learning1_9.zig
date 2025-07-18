@@ -17,5 +17,6 @@ pub fn main() void {
 }
 // User -> *User
 fn levelUp(user: *User) void {
+    std.debug.print("levelup function: {*} - {*}\n", .{ &user, user });
     user.power += 1;
 }
