@@ -6,7 +6,7 @@ pub fn main() !void {
     const allocator = gpa.allocator();
     // Create a User on the heap
     var user = try allocator.create(User);
-
+    // free the memory allocated for the user at the end of this scope
     defer allocator.destroy(user);
 
     user.id = 1;
