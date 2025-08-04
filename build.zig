@@ -3,10 +3,12 @@ const std = @import("std");
 pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
-    const path = b.path("src/learning/learning3_3.zig");
+
     const calc_module = b.addModule("calc", .{
-        .root_source_file = b.path("learning/calculation/calc.zig"),
+        .root_source_file = b.path("src/learning/calculation/calc.zig"),
     });
+
+    const path = b.path("src/learning/test_calc.zig");
 
     {
         // setup executable
@@ -16,6 +18,7 @@ pub fn build(b: *std.Build) !void {
             .optimize = optimize,
             .root_source_file = (path),
         });
+        exe.root_module.addImport("calc", calc_module);
         b.installArtifact(exe);
 
         const run_cmd = b.addRunArtifact(exe);
