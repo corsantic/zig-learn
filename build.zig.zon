@@ -65,6 +65,7 @@
         //    // actually used.
         //    .lazy = false,
         //},
+        .calc = .{ .url = "https://github.com/karlseguin/calc.zig/archive/e7e3f7048f3637723d1f0b3b1b238b2be327885a.tar.gz", .hash = "1220741f8bf7e4e8f81c71678f7c38a8c1757cf4f4d79b287a9ada45148b9e235e65" },
     },
 
     // Specifies the set of files and directories that are included in this package.
